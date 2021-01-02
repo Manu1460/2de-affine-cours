@@ -1,0 +1,100 @@
+% Fichier de style stage2.sty [UTF8]
+% Copyleft Laurent Bretonnière, laurent.bretonniere@gmail.com
+% Version du 16/03/2015
+
+\usepackage{mathtools}%	
+\usepackage{fancybox}%
+\usepackage{lastpage}%
+
+\usepackage{fancyhdr}%
+\renewcommand{\headrulewidth}{0.8pt}%
+\renewcommand{\footrulewidth}{0.8pt}%
+
+\usepackage[tikz]{bclogo}%
+\renewcommand\bcStyleTitre[1]{\normalsize\textbf{#1}\smallskip}%
+\renewcommand\logowidth{0pt}%
+
+\newcommand{\fin}{\begin{center}%
+$\clubsuit\clubsuit\clubsuit$%
+\end{center}}%
+
+\newcommand{\un}{\ding{192}\xspace}%
+\newcommand{\deux}{\ding{193}\xspace}%
+\newcommand{\trois}{\ding{194}\xspace}%
+\newcommand{\quatre}{\ding{195}\xspace}%
+\newcommand{\cinq}{\ding{196}\xspace}%
+\newcommand{\six}{\ding{197}\xspace}%
+\newcommand{\sept}{\ding{198}\xspace}%
+\newcommand{\huit}{\ding{199}\xspace}%
+\newcommand{\neuf}{\ding{200}\xspace}%
+
+\setlength{\headheight}{15pt}%
+
+%*********************************************************************************************
+% Cours
+%*********************************************************************************************
+
+\usepackage[Lenny]{fncychap}%
+\ChNumVar{\fontsize{76}{80}\usefont{OT1}{pzc}{m}{n}\selectfont}%
+\ChTitleVar{\raggedleft\Huge\sffamily\bfseries}%
+
+\renewcommand{\thesection}{\Roman{section})}%
+\renewcommand{\thesubsection}{\arabic{subsection})}%
+\renewcommand{\thesubsubsection}{\alph{subsubsection})}%
+
+%*********************************************************************************************
+% Environnements prédéfinis BCLOGO
+%*********************************************************************************************
+
+%% Lemme
+\newenvironment{lem}{\begin{bclogo}[couleurBord=black!50,arrondi=0.1,logo=\hspace{17pt},barre=none]{Lemme :}}{\end{bclogo}\medskip}%
+
+%% Propriété
+\newenvironment{prop}[1][]{\begin{bclogo}[couleur=black!10,couleurBord=black!50,arrondi=0.1,logo=\hspace{17pt},barre=none]{Propriété :~#1}}{\end{bclogo}}%
+
+%% Théorème
+\newlength{\textlarg}
+\settowidth{\textlarg}{~}
+\newenvironment{theo}[1][\hspace{-\textlarg} :]{\begin{bclogo}[couleur=black!5,couleurBord=black!50,arrondi=0.1,logo=\hspace{17pt}, barre=none]{Théorème~#1}}{\end{bclogo}\medskip}%
+
+\newenvironment{theon}[1][]{\begin{bclogo}[couleur=black!5,couleurBord=black!50,arrondi=0.1,logo=\hspace{17pt}, barre=none]{Théorème :~#1}}{\end{bclogo}\medskip}%
+
+%% Corollaire
+\newenvironment{coro}[1][]{\begin{bclogo}[couleurBord=black!50,arrondi=0.1,logo=\hspace{17pt},barre=none]{Corollaire :~#1}}{\end{bclogo}\medskip}%
+
+%% Définition(s)
+
+\newenvironment{defi}{\begin{bclogo}[couleur=black!10,couleurBord=black!50,arrondi=0.1,logo=\hspace{17pt}, barre=none]{Définition :}}{\end{bclogo}\medskip}%
+
+\newenvironment{defis}{\begin{bclogo}[couleurBord=black!50,arrondi=0.1,logo=\hspace{17pt}, barre=none]{Définitions :}}{\end{bclogo}\medskip}%
+
+%% Preuve
+\newenvironment{pf}{\renewcommand\logowidth{17pt}\begin{bclogo}[noborder=true,logo=\hspace{17pt},couleurBarre=black!25,epBarre=3.5]{Démonstration :}}{\hspace*{\fill}$\Box$\end{bclogo}\smallskip\renewcommand\logowidth{0pt}}%
+
+%\blacksquare
+
+%% Notation
+\newenvironment{nota}{\begin{bclogo}[couleurBord=black!50,arrondi=0.1,logo=\hspace{17pt},barre=none]{Notation :}}{\medskip}%
+
+%% Exercice et Exercice-type
+\newenvironment{exo}{$\circledast$ \quad\textsc{\underline{exercice} :}~}{\hspace*{\fill}$\circledast$\vskip 8pt}
+\newenvironment{type}{$\blacktriangleright$ \quad\textsc{exercice-type :}~}{\hspace*{\fill}$\blacktriangleleft$\vskip 8pt}
+
+%% Exemple(s)
+\newenvironment{exem}{\textbf{Exemple :}~}{\medskip}
+\newenvironment{exems}{\textbf{Exemples :}~}{\medskip}
+
+%% Remarque(s)
+\newenvironment{rem}{\textbf{Remarque :}~}{\medskip}
+\newenvironment{rems}{\textbf{Remarques :}~}{\medskip}
+
+%% Rappel(s)
+\newenvironment{rap}{\textbf{Rappel :}~}{\medskip}
+\newenvironment{raps}{\textbf{Rappels :}~}{\medskip}
+
+%% Cas particulier(s)
+\newenvironment{cp}{\textbf{Cas particulier :}~}{\medskip}
+\newenvironment{cps}{\textbf{Cas particuliers :}~}{\medskip}
+
+%% Application
+\newenvironment{appli}{\textbf{Application :}~}{\medskip}%{\medskip} 
